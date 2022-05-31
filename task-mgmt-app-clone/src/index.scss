@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+// ずれを揃える　https://www.clarenet.co.jp/column/coding/input%E3%81%AE%E3%82%BA%E3%83%AC%E3%82%92%E6%8F%83%E3%81%88%E3%82%8B/
+select, input, textarea, button { 
+  vertical-align:middle; 
+  position:relative; 
+}
+
+input { 
+  height: 15px; 
+  line-height: 15px; 
+}
+
+button, input[type="button"] {
+  overflow:visible; 
+  height:20x;
+  padding:0 3px;
+}

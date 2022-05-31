@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-
+.ly_background {
   height: 100vh;  // ないと画像が出ない
   background-size: 100%; // これがないと縦横比が正しくならない
 
@@ -8,3 +6,4 @@
   background-color: rgba(255, 255, 255, 0.5);
   background-blend-mode: lighten;  // 背景画像と背景色を混合
 }
+

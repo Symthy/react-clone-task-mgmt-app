@@ -8,6 +8,14 @@ Sass を使いたいなら以下を実行
 npm install sass
 ```
 
+フォーマットするなら stylelint を入れる
+
+https://stylelint.io/about/linting/#pretty-printers
+
+```
+
+```
+
 normalize.css を導入したいなら
 
 ```
@@ -32,3 +40,9 @@ ref: [CSS で背景画像を透過しているように見せる方法](https://
 ## 画像
 
 [O-DAN](https://o-dan.net/ja/)
+
+## 気を付けるところ
+
+[eslint-plugin-jsx-a11y を導入する](https://www.webneko.dev/posts/setup-eslint-to-audit-accessibility)
+
+[react/button-has-type](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/button-has-type.md)

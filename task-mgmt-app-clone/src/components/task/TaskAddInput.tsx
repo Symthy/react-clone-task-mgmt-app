@@ -1,5 +1,7 @@
 import React from 'react'
 
 export const TaskAddInput = () => (
-    <div>TaskAddInput</div>
+  <form>
+    <input type="text" placeholder="add task"/>
+  </form>
   )

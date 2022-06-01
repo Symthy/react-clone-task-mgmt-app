@@ -26,10 +26,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .ts,.tsx ./src",
-    "fix": "yarn format && yarn lint:fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'"
+    "lint": "yarn run lint:prettier && yarn run lint:es && yarn run lint:style ",
+    "lint:prettier": "prettier --check '**/*.{js,jsx,ts,tsx,css,scss}'",
+    "lint:style": "stylelint 'src/**/*.{css,scss}'",
+    "lint:es": "eslint --ext .ts,.tsx ./src",
+    "fix": "yarn format && yarn format:es && yarn format:style",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,scss}'",
+    "format:es": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "format:style": "stylelint --fix 'src/**/*.{css,scss}'"
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +66,11 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "stylelint": "^14.8.5",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "stylelint-scss": "^4.2.0"
   }
 }

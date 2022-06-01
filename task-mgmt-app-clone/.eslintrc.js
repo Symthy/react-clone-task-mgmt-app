@@ -25,31 +25,35 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
-    "unused-imports" //追加 使っていないimportを自動で削除
+    'unused-imports', //追加 使っていないimportを自動で削除
   ],
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.js', '.prettierrc.js'],
   rules: {
     'no-use-before-define': 'off', // 関数や変数が定義される前に使われているとエラーになるデフォルトの機能をoff
-    '@typescript-eslint/no-use-before-define': 'off',  
+    '@typescript-eslint/no-use-before-define': 'off',
     'import/prefer-default-export': 'off', // named exportがエラーになるので使えるようにoff
     '@typescript-eslint/no-unused-vars': 'off', // unused-importsを使うため削除
     'unused-imports/no-unused-imports': 'error', // 不要なimportの削除
-    'unused-imports/no-unused-vars': [ // unused-importsでno-unused-varsのルールを再定義
+    'unused-imports/no-unused-vars': [
+      // unused-importsでno-unused-varsのルールを再定義
       'warn',
       { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
     ],
-    "react/function-component-definition": [ // アロー関数以外受け付けない設定
+    'react/function-component-definition': [
+      // アロー関数以外受け付けない設定
       2,
       {
-        namedComponents: "arrow-function",
-        unnamedComponents: "arrow-function",
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
       },
     ],
-    'no-param-reassign': [ // パラメーターのプロパティ変更を許可
+    'no-param-reassign': [
+      // パラメーターのプロパティ変更を許可
       2,
-      { props: false }
+      { props: false },
     ],
-    'import/extensions': [ // importのときに以下の拡張子を記述しなくてもエラーにしない
+    'import/extensions': [
+      // importのときに以下の拡張子を記述しなくてもエラーにしない
       'error',
       {
         js: 'never',
@@ -58,7 +62,8 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'react/jsx-filename-extension': [ // jsx形式のファイル拡張子をjsxもしくはtsxに限定
+    'react/jsx-filename-extension': [
+      // jsx形式のファイル拡張子をjsxもしくはtsxに限定
       'error',
       {
         extensions: ['.jsx', '.tsx'],
@@ -66,19 +71,21 @@ module.exports = {
     ],
     'react/react-in-jsx-scope': 'off', // import React from 'react'が無くてもエラーを無くす
     'react/prop-types': 'off', // TypeScriptでチェックしているから不要。offにする
-    'no-void': [ // void演算子の許可
+    'no-void': [
+      // void演算子の許可
       'error',
       {
-        allowAsStatement: true,  
+        allowAsStatement: true,
       },
     ],
   },
   settings: {
-    'import/resolver': { //importするファイルをjsだけではなく、tsを含むファイルを許可する
+    'import/resolver': {
+      //importするファイルをjsだけではなく、tsを含むファイルを許可する
       node: {
         paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
-}
+};

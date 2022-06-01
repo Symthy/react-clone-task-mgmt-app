@@ -2,5 +2,7 @@ module.exports = {
   printWidth: 120,
   singleQuote: true,
   semi: true,
-  arrowParens: avoid,
-}
+  // arrowParens: avoid,
+  tabWidth: 2,
+  jsxSingleQuote: true,
+};

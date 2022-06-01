@@ -1,5 +1,3 @@
-import React from 'react'
+import React from 'react';
 
-export const Tasks = () => (
-    <div>Tasks</div>
-  )
+export const Tasks = () => <div>Tasks</div>;

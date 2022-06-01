@@ -1,5 +1,3 @@
-import React from 'react'
+import React from 'react';
 
-export const AddTaskCardBtn = () => (
-    <div />
-  )
+export const AddTaskCardBtn = () => <div />;

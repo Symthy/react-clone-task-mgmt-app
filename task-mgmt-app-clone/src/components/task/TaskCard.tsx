@@ -1,15 +1,23 @@
-import React from 'react'
-import { DeleteTaskCardBtn } from './button/DeleteTaskCardBtn'
-import { TaskAddInput } from './TaskAddInput'
-import { TaskCardTitle } from './TaskCardTitle'
-import { Tasks } from './Tasks'
-import styles from './TaskCard.module.scss'
+import React, { useState } from 'react';
+import { DeleteTaskCardBtn } from './button/DeleteTaskCardBtn';
+import { TaskAddInputForm } from './TaskAddInputForm';
+import { TaskCardTitle } from './TaskCardTitle';
+import { Tasks } from './Tasks';
+import styles from './TaskCard.module.scss';
 
-export const TaskCard = () => (
+export const TaskCard = () => {
+  const [tasks, setTasks] = useState<string[]>([]);
+  const addTask = (newTask: string) => {
+    tasks.push(newTask);
+    setTasks(tasks);
+  };
+
+  return (
     <div className={styles.el_task_card}>
-        <TaskCardTitle />
-        <DeleteTaskCardBtn />
-        <TaskAddInput />
-        <Tasks />
+      <TaskCardTitle />
+      <DeleteTaskCardBtn />
+      <TaskAddInputForm />
+      <Tasks />
     </div>
-  )
+  );
+};

@@ -1,5 +1,3 @@
-import React from 'react'
+import React from 'react';
 
-export const DeleteTaskCardBtn = () => (
-    <div>TaskCardDeleteBtn</div>
-  )
+export const DeleteTaskCardBtn = () => <div>TaskCardDeleteBtn</div>;

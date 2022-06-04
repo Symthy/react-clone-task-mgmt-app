@@ -9,7 +9,7 @@ type TaskProps = {
 };
 
 export const Tasks = ({ tasks, removeTask }: TaskProps) => (
-  <div>
+  <div className={styles.bl_tasks_frame}>
     <ul className={styles.bl_task_lines}>
       {tasks.map((task) => (
         <li key={task.id} className={styles.bl_task_line}>

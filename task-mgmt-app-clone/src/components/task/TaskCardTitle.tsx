@@ -25,7 +25,7 @@ export const TaskCardTitle = () => {
   return (
     <div className={styles.bl_card_title}>
       {isClick ? (
-        <form onSubmit={onTitleSubmit} className={styles.el_input_area}>
+        <form onSubmit={onTitleSubmit} className={styles.el_title_input}>
           <input
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus
@@ -37,7 +37,7 @@ export const TaskCardTitle = () => {
           />
         </form>
       ) : (
-        <button className={styles.el_title_area} type='button' onClick={onTitleClick}>
+        <button className={styles.el_title_view} type='button' onClick={onTitleClick}>
           {cardTitle}
         </button>
       )}

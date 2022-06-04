@@ -1,6 +1,8 @@
+@use "../../styles/utility.scss" as util;
+
 .el_add_input {
-  display: flex;
-  justify-content: center;
+  @include util.flex-horizontal;
+
   width: 100%;
   padding: 5px 0;
 

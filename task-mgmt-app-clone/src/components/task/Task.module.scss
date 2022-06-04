@@ -1,0 +1,25 @@
+@use "../../styles/utility.scss" as util;
+
+$task-height: 5.0vh;
+
+.bl_task{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $task-height;
+  width: 100%;
+  background-color:darkturquoise;
+  margin: 0 5px;
+  box-shadow: 1px 1px 3px gray;
+}
+
+.el_task_text {
+  line-height: $task-height;
+  padding-left: 10px;
+}
+
+.el_remove_btn {
+  padding: 10px;
+  filter: drop-shadow(2px 2px 2px gray);
+  cursor: pointer;
+}

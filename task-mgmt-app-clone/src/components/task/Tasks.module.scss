@@ -1,0 +1,20 @@
+.bl_task_lines {
+  padding-left: 0; // ul,li reset
+}
+
+
+.bl_task_line {
+  display: flex;
+  align-items: center;
+  height: 4.5vh;
+  padding: 6px;
+  border-radius: 3%;;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}

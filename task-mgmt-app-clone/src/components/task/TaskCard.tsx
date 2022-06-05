@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
+import { Draggable } from 'react-beautiful-dnd';
 import { DeleteTaskCardBtn } from './button/DeleteTaskCardBtn';
 import { TaskAddInputForm } from './TaskAddInputForm';
 import { TaskCardTitle } from './TaskCardTitle';
@@ -8,11 +9,12 @@ import { TaskCardData, TaskData } from './type';
 import { Tasks } from './Tasks';
 
 type TaskCardProps = {
+  index: number;
   taskCard: TaskCardData;
   removeTaskCard: (id: string) => void;
 };
 
-export const TaskCard = ({ taskCard, removeTaskCard }: TaskCardProps) => {
+export const TaskCard = ({ index, taskCard, removeTaskCard }: TaskCardProps) => {
   const [tasks, setTasks] = useState<TaskData[]>([]);
   const addTask = (newTaskName: string) => {
     const taskId: string = uuid();
@@ -37,13 +39,26 @@ export const TaskCard = ({ taskCard, removeTaskCard }: TaskCardProps) => {
   };
 
   return (
-    <div className={styles.bl_task_card}>
-      <div className={styles.bl_task_card_header}>
-        <TaskCardTitle />
-        <DeleteTaskCardBtn taskCard={taskCard} removeTaskCard={removeTaskCard} />
-      </div>
-      <TaskAddInputForm addTask={addTask} />
-      <Tasks tasks={tasks} removeTask={removeTask} reorderTasks={reorderTasks} />
-    </div>
+    <Draggable draggableId={taskCard.id} index={index}>
+      {(provided) => (
+        <div
+          className={styles.bl_task_card}
+          ref={provided.innerRef}
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...provided.draggableProps}
+        >
+          <div
+            className={styles.bl_task_card_header}
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...provided.dragHandleProps}
+          >
+            <TaskCardTitle />
+            <DeleteTaskCardBtn taskCard={taskCard} removeTaskCard={removeTaskCard} />
+          </div>
+          <TaskAddInputForm addTask={addTask} />
+          <Tasks tasks={tasks} removeTask={removeTask} reorderTasks={reorderTasks} />
+        </div>
+      )}
+    </Draggable>
   );
 };

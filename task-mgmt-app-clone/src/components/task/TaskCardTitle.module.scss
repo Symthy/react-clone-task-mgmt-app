@@ -13,6 +13,7 @@ $title-height: 30px;
   font-size: 1.1rem;
   cursor: pointer;
   border: none;
+  border-radius: 5px;
 }
 
 .el_title_input {
@@ -26,10 +27,10 @@ $title-height: 30px;
   input[type="text"] {
     border: none;
     margin: 0;
-    width: 90%;
-    height: $title-height;
+    width: 100%;
+    height: $title-height - 2px;
     font-size: 1.1rem;
-    border-radius: 1px;
+    border-radius: 5px;
     outline: none;
   }
 }

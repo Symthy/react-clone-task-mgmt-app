@@ -1,0 +1,21 @@
+.bl_delete_btn {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.el_btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  height: 80%;
+  width: 80%;
+  padding: 0 1px;
+  border: none;
+  background-color: white;
+  color: rgb(228 0 0);
+  box-shadow: 1px 1px 1px gray;
+}

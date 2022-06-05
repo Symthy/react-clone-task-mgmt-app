@@ -4,10 +4,15 @@ import { DeleteTaskCardBtn } from './button/DeleteTaskCardBtn';
 import { TaskAddInputForm } from './TaskAddInputForm';
 import { TaskCardTitle } from './TaskCardTitle';
 import styles from './TaskCard.module.scss';
-import { TaskData } from './type';
+import { TaskCardData, TaskData } from './type';
 import { Tasks } from './Tasks';
 
-export const TaskCard = () => {
+type TaskCardProps = {
+  taskCard: TaskCardData;
+  removeTaskCard: (id: string) => void;
+};
+
+export const TaskCard = ({ taskCard, removeTaskCard }: TaskCardProps) => {
   const [tasks, setTasks] = useState<TaskData[]>([]);
   const addTask = (newTaskName: string) => {
     const taskId: string = uuid();
@@ -32,9 +37,11 @@ export const TaskCard = () => {
   };
 
   return (
-    <div className={styles.el_task_card}>
-      <TaskCardTitle />
-      <DeleteTaskCardBtn />
+    <div className={styles.bl_task_card}>
+      <div className={styles.bl_task_card_header}>
+        <TaskCardTitle />
+        <DeleteTaskCardBtn taskCard={taskCard} removeTaskCard={removeTaskCard} />
+      </div>
       <TaskAddInputForm addTask={addTask} />
       <Tasks tasks={tasks} removeTask={removeTask} reorderTasks={reorderTasks} />
     </div>

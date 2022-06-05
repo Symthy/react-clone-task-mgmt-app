@@ -1,6 +1,7 @@
 .bl_task_board {
   display: flex;
   justify-content: flex-start;
-  align-items:  flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
   padding: 10px;
 }

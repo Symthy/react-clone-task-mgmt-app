@@ -11,6 +11,6 @@ type DeleteTaskCardBtnProps = {
 
 export const DeleteTaskCardBtn = ({ taskCard, removeTaskCard }: DeleteTaskCardBtnProps) => (
   <div className={styles.bl_delete_btn}>
-    <FontAwesomeIcon icon={faXmark} className={styles.el_btn} onClick={(e) => removeTaskCard(taskCard.id)} />
+    <FontAwesomeIcon icon={faXmark} className={styles.el_btn} onClick={(_) => removeTaskCard(taskCard.id)} />
   </div>
 );

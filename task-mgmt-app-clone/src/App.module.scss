@@ -1,6 +1,6 @@
 .ly_background {
   height: 100vh;  // ないと画像が出ない
-  background-size: 100%; // これがないと縦横比が正しくならない
+  background-size: 240vh; // これがないと縦横比が正しくならない
   background-image: url('../public/back_sky2.jpg');
   background-color: rgb(255 255 255 / 50%);
   background-blend-mode: lighten;  // 背景画像と背景色を混合

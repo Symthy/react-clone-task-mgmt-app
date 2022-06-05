@@ -1,27 +1,5 @@
-.bl_tasks_frame {
+.bl_tasks {
   margin: 0 8px 5px ;
   background-color: white;
   box-shadow: 1px 1px 2px 1px #ccc inset, -1px -1px 2px -1px #ccc inset;
-}
-
-.bl_task_lines {
-  padding-left: 0; // ul,li reset
-}
-
-.bl_task_line {
-  display: flex;
-  align-items: center;
-  height: 4.5vh;
-  padding: 6px;
-  border-radius: 3%;
-
-  &:first-child {
-    margin-top: -3px;
-    padding-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: -3px;
-    padding-bottom: 0;
-  }
 }

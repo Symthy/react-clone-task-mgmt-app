@@ -1,16 +1,16 @@
 @use "../../styles/utility.scss" as util;
 
-$task-height: 5.0vh;
+$task-height: 40px;
 
 .bl_task{
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: $task-height;
-  width: 100%;
-  margin: 0;
   background-color:darkturquoise;
   box-shadow: 1px 1px 3px gray;
+  border-radius: 3%;
+  margin: 8px;
 }
 
 .el_task_text {

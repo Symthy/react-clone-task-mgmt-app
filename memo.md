@@ -1,6 +1,46 @@
 # memo
 
-## CSS 関係
+## React Tips
+
+### state hook で array の中身だけ変えても再描画はされない
+
+[React の state hook で array を更新しても再描画がされない問題](https://gotohayato.com/content/509/)
+
+中身だけ変えても検知されない
+
+[公式 Doc: Bailing out of a state update](https://reactjs.org/docs/hooks-reference.html#bailing-out-of-a-state-update)
+
+※useReducer だけでなく useState にもあてはまる
+
+```javascript
+  const [tasks, setTasks] = useState<TaskData[]>([]);
+  const addTask = (newTaskName: string) => {
+    tasks.push(
+      {
+        id: tasks.length + 1,
+        name: newTaskName,
+      }
+    )
+    setTasks(tasks);
+  };
+```
+
+```javascript
+  const [tasks, setTasks] = useState<TaskData[]>([]);
+  const addTask = (newTaskName: string) => {
+    setTasks([
+      ...tasks,
+      {
+        id: tasks.length + 1,
+        name: newTaskName,
+      },
+    ]);
+  };
+```
+
+## 設定関係
+
+### CSS
 
 Sass を使いたいなら以下を実行
 
@@ -62,9 +102,33 @@ bg {
 
 ref: [CSS で背景画像を透過しているように見せる方法](https://hirashimatakumi.com/blog/7003.html)
 
-## 画像
+### react-create-app プロジェクト alias 設定
 
-[O-DAN](https://o-dan.net/ja/)
+[react-create-app で作成したプロジェクトに import の alias を設定する](https://zukucode.com/2021/06/react-create-app-import-alias.html)
+
+```
+npm install -D @craco/craco
+```
+
+## 素材
+
+- [O-DAN](https://o-dan.net/ja/)
+
+  - フリーの背景画像
+
+- [Font Awesome](https://fontawesome.com/)
+  - アイコン集。導入は以下
+
+```
+npm install @fortawesome/react-fontawesome
+npm install @fortawesome/fontawesome-svg-core
+npm install @fortawesome/free-brands-svg-icons
+npm install @fortawesome/free-regular-svg-icons
+npm install @fortawesome/free-solid-svg-icons
+```
+
+ref: [【React】FontAwesome の使い方（同じ名前のアイコンをインポートする場合もあり）
+](https://de-milestones.com/react-fontawesome/)
 
 ## 気を付けるところ
 

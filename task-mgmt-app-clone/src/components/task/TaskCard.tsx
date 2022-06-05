@@ -9,16 +9,25 @@ import { Tasks } from './Tasks';
 export const TaskCard = () => {
   const [tasks, setTasks] = useState<TaskData[]>([]);
   const addTask = (newTaskName: string) => {
+    const taskId = tasks.length + 1;
     setTasks([
       ...tasks,
       {
-        id: tasks.length + 1,
+        id: taskId,
+        draggableId: `task-${taskId}`,
         name: newTaskName,
       },
     ]);
   };
+
   const removeTask = (taskId: number) => {
     setTasks(tasks.filter((t) => t.id !== taskId));
+  };
+
+  const reorderTasks = (startIndex: number, endIndex: number) => {
+    const remove = tasks.splice(startIndex, 1);
+    tasks.splice(endIndex, 0, remove[0]);
+    setTasks(tasks);
   };
 
   return (
@@ -26,7 +35,7 @@ export const TaskCard = () => {
       <TaskCardTitle />
       <DeleteTaskCardBtn />
       <TaskAddInputForm addTask={addTask} />
-      <Tasks tasks={tasks} removeTask={removeTask} />
+      <Tasks tasks={tasks} removeTask={removeTask} reorderTasks={reorderTasks} />
     </div>
   );
 };

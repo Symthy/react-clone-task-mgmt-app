@@ -37,3 +37,20 @@ after (v17)
 ```
 
 ※ react-beautiful-dnd と `<ul>`, `<li>` 要素の相性は悪い（表示が崩れる）。スタイルリセットすれば回避できるかもしれないが…。そうするかはプロダクトの開発方針次第。
+
+```
+<DragDropContext onDragEnd={onDragEndSortTasks}>
+  <Droppable key="taskDroppable" droppableId="taskDroppable">
+    {(provided) => (
+      <div {...provided.droppableProps} ref={provided.innerRef}>
+        {tasks.map((task, i) => (
+          <div key={task.id}>  // ここに margin padding 指定するとドラッグ中のスタイル崩れる模様
+            <Task index={i} task={task} removeTask={removeTask} />
+          </div>
+        ))}
+        <div>{provided.placeholder}</div>
+      </div>
+    )}
+  </Droppable>
+</DragDropContext>
+```

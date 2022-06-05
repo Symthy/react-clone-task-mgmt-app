@@ -1,5 +1,6 @@
 .bl_tasks {
   margin: 0 8px 5px ;
+  padding: 0 8px 8px; // task 側で first-childが効かないためここで空白調整 
   background-color: white;
   box-shadow: 1px 1px 2px 1px #ccc inset, -1px -1px 2px -1px #ccc inset;
 }

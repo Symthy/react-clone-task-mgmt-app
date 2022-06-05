@@ -6,7 +6,7 @@ import styles from './Tasks.module.scss';
 
 type TaskProps = {
   tasks: TaskData[];
-  removeTask: (id: number) => void;
+  removeTask: (id: string) => void;
   reorderTasks: (startIdx: number, endIdx: number) => void;
 };
 

@@ -10,7 +10,9 @@ $task-height: 40px;
   background-color:darkturquoise;
   box-shadow: 1px 1px 3px gray;
   border-radius: 3%;
-  margin: 8px;
+  margin-top: 8px;
+
+  // first-child が効かない
 }
 
 .el_task_text {

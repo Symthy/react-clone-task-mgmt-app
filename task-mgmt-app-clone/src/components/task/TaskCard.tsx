@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import { DeleteTaskCardBtn } from './button/DeleteTaskCardBtn';
 import { TaskAddInputForm } from './TaskAddInputForm';
 import { TaskCardTitle } from './TaskCardTitle';
@@ -9,7 +10,7 @@ import { Tasks } from './Tasks';
 export const TaskCard = () => {
   const [tasks, setTasks] = useState<TaskData[]>([]);
   const addTask = (newTaskName: string) => {
-    const taskId = tasks.length + 1;
+    const taskId: string = uuid();
     setTasks([
       ...tasks,
       {
@@ -20,7 +21,7 @@ export const TaskCard = () => {
     ]);
   };
 
-  const removeTask = (taskId: number) => {
+  const removeTask = (taskId: string) => {
     setTasks(tasks.filter((t) => t.id !== taskId));
   };
 
